@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Opereon</title>
+    <link>http://opereon.io/</link>
+    <description>Recent content on Opereon</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 29 Dec 2018 11:02:05 +0600</lastBuildDate>
+    
+	<atom:link href="http://opereon.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Overview</title>
+      <link>http://opereon.io/docs/overview/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://opereon.io/docs/overview/</guid>
+      <description> What is Opereon? Opereon is a configuration management and automation system for IT, much like other systems, like Ansible, Puppet or Chef.
+Why Opereon? How Opereon works? </description>
+    </item>
+    
+    <item>
+      <title>Data model</title>
+      <link>http://opereon.io/docs/model/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://opereon.io/docs/model/</guid>
+      <description> The Model </description>
+    </item>
+    
+    <item>
+      <title>Data query language</title>
+      <link>http://opereon.io/docs/query/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://opereon.io/docs/query/</guid>
+      <description>Opath Simple language for object tree lookup and transformation, similar to XPath in function.
+Data types All data types transferable through json, yaml and toml formats are supported. * null - empty value * number - internally stored as either 64-bit integer or 64-bit float * boolean - true or false * string - strings are stored as UTF-8 encoded data. * binary - binary data. * object - object or map, can contain string-keyed properties * array - array or sequence of elements * date - to be implemented!</description>
+    </item>
+    
+    <item>
+      <title>Templates</title>
+      <link>http://opereon.io/docs/template/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://opereon.io/docs/template/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Procedures</title>
+      <link>http://opereon.io/docs/procedures/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://opereon.io/docs/procedures/</guid>
+      <description> aaa </description>
+    </item>
+    
+    <item>
+      <title>Security</title>
+      <link>http://opereon.io/home/security/</link>
+      <pubDate>Sat, 29 Dec 2018 11:02:05 +0600</pubDate>
+      
+      <guid>http://opereon.io/home/security/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Instant deployment</title>
+      <link>http://opereon.io/home/deployment/</link>
+      <pubDate>Fri, 28 Dec 2018 11:02:05 +0600</pubDate>
+      
+      <guid>http://opereon.io/home/deployment/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Power of simplicity</title>
+      <link>http://opereon.io/home/simplicity/</link>
+      <pubDate>Fri, 28 Dec 2018 11:02:05 +0600</pubDate>
+      
+      <guid>http://opereon.io/home/simplicity/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
