@@ -16,8 +16,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://opereon.io/docs/overview/</guid>
-      <description> What is Opereon? Opereon is a configuration management and automation system for IT, much like other systems, like Ansible, Puppet or Chef.
-Why Opereon? How Opereon works? </description>
+      <description>An overview of the Opereon IT orchestration tool.</description>
     </item>
     
     <item>
@@ -35,9 +34,7 @@ Why Opereon? How Opereon works? </description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://opereon.io/docs/opath/</guid>
-      <description>Opath is a simple language for object tree lookup and transformation, similar to XPath in function.
-Data types All data types transferable through json, yaml and toml formats are supported.
- null - empty value number - internally stored as either 64-bit integer or 64-bit float boolean - true or false string - strings are stored as UTF-8 encoded data. binary - binary data. object - object or map, can contain string-keyed properties array - array or sequence of elements  Literals  123, -2 - 64-bit integer values 1.</description>
+      <description>Definition of object tree query language Opath.</description>
     </item>
     
     <item>
@@ -46,7 +43,7 @@ Data types All data types transferable through json, yaml and toml formats are s
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://opereon.io/docs/template/</guid>
-      <description></description>
+      <description>[TBD]</description>
     </item>
     
     <item>
@@ -55,7 +52,7 @@ Data types All data types transferable through json, yaml and toml formats are s
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://opereon.io/docs/procedures/</guid>
-      <description></description>
+      <description>[TBD]</description>
     </item>
     
   </channel>

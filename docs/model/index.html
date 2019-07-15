@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
   
   
-  <link rel="stylesheet" href="/css/style.min.70d5df4a18429c6793101208e0894934068d843c4358efd29b92f067bf5084bc.css">
+  <link rel="stylesheet" href="/css/style.min.b0cd968f63ced391e2a118f831c44b95930593e951cf11cfb4c81dc1260c91f5.css">
   
 
   
@@ -63,7 +63,7 @@
       </a>
     </li>
     
-    <li class="menu-item-documentation">
+    <li class="menu-item-documentation active ">
       <a href="/docs/">
         <span>Documentation</span>
       </a>
@@ -100,48 +100,71 @@
         <div class="col-12 col-md-3 mb-3">
           <div class="sidebar">
             
-<div class="docs-menu">
-  <h4>Documentation</h4>
-  <ul>
+<aside class="sidebar-menu">
+  <ul class="sidebar-main-menu">
     
-    <li class="">
-      <a href="https://opereon.io/docs/overview/">Overview</a>
+    <li>
+      <a href="/docs/overview/" class="">Overview</a>
+      
     </li>
     
-    <li class="active ">
-      <a href="https://opereon.io/docs/model/">Data model</a>
+    <li>
+      <a href="/docs/model/" class="active">Data model</a>
+      
+        <nav id="TableOfContents">
+<ul>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#data-representation">Data representation</a>
+<ul>
+<li><a href="#manifest-file">Manifest file</a></li>
+<li><a href="#settings-file">Settings file</a></li>
+</ul></li>
+</ul>
+</nav>
+      
     </li>
     
-    <li class="">
-      <a href="https://opereon.io/docs/opath/">Opath query language</a>
+    <li>
+      <a href="/docs/opath/" class="">Opath query language</a>
+      
     </li>
     
-    <li class="">
-      <a href="https://opereon.io/docs/template/">Templates</a>
+    <li>
+      <a href="/docs/template/" class="">Templates</a>
+      
     </li>
     
-    <li class="">
-      <a href="https://opereon.io/docs/procedures/">Procedures</a>
+    <li>
+      <a href="/docs/procedures/" class="">Procedures</a>
+      
     </li>
     
   </ul>
-</div>
+</aside>
+
 
           </div>
         </div>
         <div class="col-12 col-md-9">
           
-<h1 class="title">Data model</h1>
 <div class="content">
+  <h1 class="title">Data model</h1>
   
 
-<p>In our approach to ICT automation, everything is built around a concept of representing every piece of significant
+<p>In our approach to ICT automation, everything is built around a concept of <strong>data model</strong> representing every piece of significant
 information about the managed infrastructure in the form of a <strong>versioned</strong> <strong>file tree</strong>. All of the necessary facts about
 managed hosts, users, services, etc. are represented by set of (mostly) textual files, that are easy to edit and
 maintain.</p>
 
+<p>The model is kept in a single <a href="https://git-scm.com">git</a> repository for change tracking. When used, the
+data from files is then transformed into an generalized object tree, which can be traversed and searched with the use
+of our own specialized data query language <a href="/docs/opath">Opath</a>.</p>
+
+<h1 id="introduction">Introduction</h1>
+
 <p>For illustration purposes, consider the following directory, containing some crucial pieces of information about a very
 simple infrastructure, with one host named <code>server1</code> and one user account named <code>john</code>.</p>
+
 
 
 
@@ -164,11 +187,12 @@ simple infrastructure, with one host named <code>server1</code> and one user acc
     john/
       ssh/
         id_rsa.pub
-      _.json</code></pre></div>
+      _.json  </code></pre></div>
 </figure>
 
 
 <p>Of particular interest in this discussion are the files presented below:</p>
+
 
 
 
@@ -202,10 +226,11 @@ net:
       address: <span style="color:#ff0;font-weight:bold">192.168</span>.<span style="color:#ff0;font-weight:bold">1.100</span>
       mask: <span style="color:#ff0;font-weight:bold">255.255</span>.<span style="color:#ff0;font-weight:bold">255.0</span>
       gateway: <span style="color:#ff0;font-weight:bold">192.168</span>.<span style="color:#ff0;font-weight:bold">1.1</span>
-packages: [mc, vim, ]</code></pre></td></tr></table>
+packages: [mc, vim, nmap]</code></pre></td></tr></table>
 </div>
 </div>
 </figure>
+
 
 
 
@@ -252,17 +277,7 @@ configuration of the managed infrastructure. By changing some metadata inside th
 address for the hosts) and running Opereon toolchain on the file set, that change should be performed on the actual host
 by executing a defined set of administrative tasks (like reconfiguring network interfaces).</p>
 
-<hr />
-
-<p>in a single <a href="https://git-scm.com">git</a> repository for change tracking. When used, the
-data from files is then transformed into an generalized object tree, which can be traversed and searched with the use
-of our own specialized data query language <a href="/docs/opath">Opath</a>.</p>
-
-<p>, as well as definitions of all administrative tasks,</p>
-
-<p>For illustration purposes lets analyse files:</p>
-
-<h2 id="data-representation">Data representation</h2>
+<h1 id="data-representation">Data representation</h1>
 
 <p>Files in the model can contain arbitrary JSON-like data (currently supported parsable formats include <a href="https://www.json.org">JSON</a>,
 <a href="https://yaml.org">YAML</a> and <a href="https://github.com/toml-lang/toml">TOML</a>).
@@ -271,10 +286,11 @@ Other data formats are treated as binary files.</p>
 <p>All of the files are transformed into an object tree in memory when in use by Opereon tools. The rules of this
 transformation are configurable, as described below.</p>
 
-<h3 id="manifest-file">Manifest file</h3>
+<h2 id="manifest-file">Manifest file</h2>
 
 <p>At the root of file tree representing data model for Opereon, there must be preset a manifest file. Manifest file is by
 default named <code>op.toml</code></p>
+
 
 
 
@@ -314,7 +330,101 @@ user_defined_expr_1 = <span style="color:#0ff;font-weight:bold">&#34;$.**[custom
 </figure>
 
 
-<h3 id="settings-file">Settings file</h3>
+<h2 id="settings-file">Settings file</h2>
+
+<p>Everywhere in the data model, a user can also define a file named <code>.operc</code>, containing settings used when reading the model
+into the object tree. The settings are overwritten by a setting file in hierarchical fashion, for the folder in which the
+<code>.operc</code> file is located, and its subfolders, unless further overwritten with nested <code>.operc</code> files.</p>
+
+<p>By default, if no <code>.operc</code> file is present anywhere in the model, the default settings are used, as presented below.</p>
+
+
+
+
+
+
+<figure class="code" id=".operc">
+  
+  <figcaption class="filename"><code>.operc</code></figcaption>
+  
+  <div class="buttons">
+    <button class="fa fa-copy clipboard"></button>
+  </div>
+  <div class="highlight"><div style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">33
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml">inherit_excludes = <span style="color:#fff;font-weight:bold">true</span>
+inherit_includes = <span style="color:#fff;font-weight:bold">true</span>
+inherit_overrides = <span style="color:#fff;font-weight:bold">true</span>
+
+[[exclude]]
+path = <span style="color:#0ff;font-weight:bold">&#34;**/.*/**&#34;</span>
+
+[[include]]
+path = <span style="color:#0ff;font-weight:bold">&#34;**/*&#34;</span>
+file_type = <span style="color:#0ff;font-weight:bold">&#34;dir&#34;</span>
+item = <span style="color:#0ff;font-weight:bold">&#34;${map()}&#34;</span>
+mapping = <span style="color:#0ff;font-weight:bold">&#34;${$.find(array($item.@file_path_components[..-2]).join(&#39;.&#39;)).set($item.@file_name, $item)}&#34;</span>
+
+[[include]]
+path = <span style="color:#0ff;font-weight:bold">&#34;**/_.{yaml,yml,toml,json}&#34;</span>
+file_type = <span style="color:#0ff;font-weight:bold">&#34;file&#34;</span>
+item = <span style="color:#0ff;font-weight:bold">&#34;${loadFile(@.@file_path, @.@file_ext)}&#34;</span>
+mapping = <span style="color:#0ff;font-weight:bold">&#34;${$.find(array($item.@file_path_components[..-2]).join(&#39;.&#39;)).extend($item)}&#34;</span>
+
+[[include]]
+path = <span style="color:#0ff;font-weight:bold">&#34;**/*.{yaml,yml,toml,json}&#34;</span>
+file_type = <span style="color:#0ff;font-weight:bold">&#34;file&#34;</span>
+item = <span style="color:#0ff;font-weight:bold">&#34;${loadFile(@.@file_path, @.@file_ext)}&#34;</span>
+mapping = <span style="color:#0ff;font-weight:bold">&#34;${$.find(array($item.@file_path_components[..-2]).join(&#39;.&#39;)).set($item.@file_stem, $item)}&#34;</span>
+
+[[include]]
+path = <span style="color:#0ff;font-weight:bold">&#34;**/*&#34;</span>
+file_type = <span style="color:#0ff;font-weight:bold">&#34;file&#34;</span>
+item = <span style="color:#0ff;font-weight:bold">&#34;${loadFile(@.@file_path, &#39;text&#39;)}&#34;</span>
+mapping = <span style="color:#0ff;font-weight:bold">&#34;${$.find(array($item.@file_path_components[..-2]).join(&#39;.&#39;)).set($item.@file_stem, $item)}&#34;</span>
+
+[overrides]
+<span style="color:#007f7f"># no overrides</span>
+</code></pre></td></tr></table>
+</div>
+</div>
+</figure>
+
 
 </div>
 
@@ -347,7 +457,7 @@ user_defined_expr_1 = <span style="color:#0ff;font-weight:bold">&#34;$.**[custom
   
 
   
-  <script type="text/javascript" src="/js/bundle.min.f6c8e97f31be07c825aab5bc3d781b6f496478ce2295a83f82ecc00e798e963f.js"></script>
+  <script type="text/javascript" src="/js/bundle.min.e107531f9543c06237ddfcc110eff8eba13bea0fc99c479e39d5dd57ea10f958.js"></script>
   
 
   

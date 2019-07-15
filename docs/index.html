@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
   
   
-  <link rel="stylesheet" href="/css/style.min.70d5df4a18429c6793101208e0894934068d843c4358efd29b92f067bf5084bc.css">
+  <link rel="stylesheet" href="/css/style.min.b0cd968f63ced391e2a118f831c44b95930593e951cf11cfb4c81dc1260c91f5.css">
   
 
   
@@ -63,7 +63,7 @@
       </a>
     </li>
     
-    <li class="menu-item-documentation active">
+    <li class="menu-item-documentation active ">
       <a href="/docs/">
         <span>Documentation</span>
       </a>
@@ -100,49 +100,61 @@
         <div class="col-12 col-md-3 mb-3">
           <div class="sidebar">
             
-<div class="docs-menu">
-  <h4>Documentation</h4>
-  <ul>
+<aside class="sidebar-menu">
+  <ul class="sidebar-main-menu">
     
-    <li class="">
-      <a href="https://opereon.io/docs/overview/">Overview</a>
+    <li>
+      <a href="/docs/overview/" class="">Overview</a>
+      
     </li>
     
-    <li class="">
-      <a href="https://opereon.io/docs/model/">Data model</a>
+    <li>
+      <a href="/docs/model/" class="">Data model</a>
+      
     </li>
     
-    <li class="">
-      <a href="https://opereon.io/docs/opath/">Opath query language</a>
+    <li>
+      <a href="/docs/opath/" class="">Opath query language</a>
+      
     </li>
     
-    <li class="">
-      <a href="https://opereon.io/docs/template/">Templates</a>
+    <li>
+      <a href="/docs/template/" class="">Templates</a>
+      
     </li>
     
-    <li class="">
-      <a href="https://opereon.io/docs/procedures/">Procedures</a>
+    <li>
+      <a href="/docs/procedures/" class="">Procedures</a>
+      
     </li>
     
   </ul>
-</div>
+</aside>
+
 
           </div>
         </div>
         <div class="col-12 col-md-9">
           
 
-<h1 class="title">Documentation</h1>
 <div class="content">
-  
+  <h1 class="title">Documentation</h1>
+  <p><a href="https://opereon.io">Opereon</a> is an open source tool for automatic orchestration of resources in ICT infrastructure.
+It can be used to perform any administrative tasks on Unix-like hosts.</p>
+
+<p><a href="https://opereon.io">Opereon</a> does not require any agent installed on the remote hosts, and uses internally an <a href="https://www.openssh.com">OpenSSH</a>
+client to perform remote administrative tasks. This ensures that everything works exactly as it would when the user
+would perform the same tasks manually.</p>
+
+<p>This documentation consists of several chapters.</p>
+
 </div>
 
 
 <div class="summary mb-2">
   
   <h2 class="title-summary"><a href="https://opereon.io/docs/overview/">Overview</a></h2>
-  <p> What is Opereon? Opereon is a configuration management and automation system for IT, much like other systems, like Ansible, Puppet or Chef.
-Why Opereon? How Opereon works? </p>
+  <p>An overview of the Opereon IT orchestration tool.</p>
 </div>
 
 <div class="summary mb-2">
@@ -154,21 +166,19 @@ Why Opereon? How Opereon works? </p>
 <div class="summary mb-2">
   
   <h2 class="title-summary"><a href="https://opereon.io/docs/opath/">Opath query language</a></h2>
-  <p>Opath is a simple language for object tree lookup and transformation, similar to XPath in function.
-Data types All data types transferable through json, yaml and toml formats are supported.
- null - empty value number - internally stored as either 64-bit integer or 64-bit float boolean - true or false string - strings are stored as UTF-8 encoded data. binary - binary data. object - object or map, can contain string-keyed properties array - array or sequence of elements  Literals  123, -2 - 64-bit integer values 1.</p>
+  <p>Definition of object tree query language Opath.</p>
 </div>
 
 <div class="summary mb-2">
   
   <h2 class="title-summary"><a href="https://opereon.io/docs/template/">Templates</a></h2>
-  <p></p>
+  <p>[TBD]</p>
 </div>
 
 <div class="summary mb-2">
   
   <h2 class="title-summary"><a href="https://opereon.io/docs/procedures/">Procedures</a></h2>
-  <p></p>
+  <p>[TBD]</p>
 </div>
 
 
@@ -202,7 +212,7 @@ Data types All data types transferable through json, yaml and toml formats are s
   
 
   
-  <script type="text/javascript" src="/js/bundle.min.f6c8e97f31be07c825aab5bc3d781b6f496478ce2295a83f82ecc00e798e963f.js"></script>
+  <script type="text/javascript" src="/js/bundle.min.e107531f9543c06237ddfcc110eff8eba13bea0fc99c479e39d5dd57ea10f958.js"></script>
   
 
   
