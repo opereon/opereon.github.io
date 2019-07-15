@@ -3,64 +3,63 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://opereon.io/docs/overview/</loc>
+    <loc>https://opereon.io/docs/overview/</loc>
   </url>
   
   <url>
-    <loc>http://opereon.io/docs/model/</loc>
+    <loc>https://opereon.io/docs/model/</loc>
   </url>
   
   <url>
-    <loc>http://opereon.io/docs/query/</loc>
+    <loc>https://opereon.io/docs/opath/</loc>
   </url>
   
   <url>
-    <loc>http://opereon.io/docs/template/</loc>
+    <loc>https://opereon.io/docs/template/</loc>
   </url>
   
   <url>
-    <loc>http://opereon.io/docs/procedures/</loc>
+    <loc>https://opereon.io/docs/procedures/</loc>
   </url>
   
   <url>
-    <loc>http://opereon.io/home/</loc>
+    <loc>https://opereon.io/home/</loc>
     <lastmod>2018-12-29T11:02:05+06:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://opereon.io/</loc>
+    <loc>https://opereon.io/</loc>
     <lastmod>2018-12-29T11:02:05+06:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://opereon.io/home/security/</loc>
+    <loc>https://opereon.io/home/security/</loc>
     <lastmod>2018-12-29T11:02:05+06:00</lastmod>
   </url>
   
   <url>
-    <loc>http://opereon.io/home/deployment/</loc>
+    <loc>https://opereon.io/home/deployment/</loc>
     <lastmod>2018-12-28T11:02:05+06:00</lastmod>
   </url>
   
   <url>
-    <loc>http://opereon.io/home/simplicity/</loc>
+    <loc>https://opereon.io/home/simplicity/</loc>
     <lastmod>2018-12-28T11:02:05+06:00</lastmod>
   </url>
   
   <url>
-    <loc>http://opereon.io/categories/</loc>
+    <loc>https://opereon.io/categories/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://opereon.io/docs/</loc>
-    <priority>0</priority>
+    <loc>https://opereon.io/docs/</loc>
   </url>
   
   <url>
-    <loc>http://opereon.io/tags/</loc>
+    <loc>https://opereon.io/tags/</loc>
     <priority>0</priority>
   </url>
   
