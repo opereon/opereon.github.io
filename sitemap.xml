@@ -3,7 +3,15 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://opereon.io/docs/quickstart/</loc>
+  </url>
+  
+  <url>
     <loc>https://opereon.io/docs/overview/</loc>
+  </url>
+  
+  <url>
+    <loc>https://opereon.io/docs/install/</loc>
   </url>
   
   <url>
