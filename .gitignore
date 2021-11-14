@@ -1,7 +1,0 @@
-node_modules
-*.log*
-.nuxt
-coverage
-dist
-sw.*
-.env
