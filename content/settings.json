@@ -1,0 +1,12 @@
+{
+  "title": "Opereon",
+  "url": "https://opereon.io",
+  "logo": {
+    "light": "/opereon-logo-light.svg",
+    "dark": "/opereon-logo-dark.svg"
+  },
+  "github": "opereon/opereon.github.io",
+  "defaultBranch": "master",
+  "defaultDir": "",
+  "twitter": "opereon"
+}
