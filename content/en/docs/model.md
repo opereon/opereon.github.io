@@ -26,14 +26,14 @@ simple infrastructure, with one host named `server1` and one user account named 
 .
 ├── hosts/
 │    └── server1/
-│        ├── etc/
+│        ├── .etc/
 │        │   └── ssh/
 │        │       ├── ssh_host_rsa_key
 │        │       └── ssh_host_rsa_key.pub
 │        └── _.yaml
 └── users/
     └── john/
-        ├── ssh/
+        ├── .ssh/
         │   └── id_rsa.pub
         └── _.json
 ```
