@@ -85,13 +85,12 @@ transformation are configurable, as described below.
 ### Manifest file
 
 At the root of file tree representing data model for Opereon, there must be preset a manifest file. Manifest file is by 
-default named `op.toml`
+default named `op.toml`. Manifest file contains general information and definitions of variables, that can be used across further configuraation.
 
 ```toml{numberLines: true}[op.toml]
 [info]
 authors = ["John <johnny@example.org>", "Mark <mark@example.org>"]
 description = "Server farm 1"
-
 [defines]
 $users = "$.conf.users.*"
 $hosts = "$.conf.hosts.*"
