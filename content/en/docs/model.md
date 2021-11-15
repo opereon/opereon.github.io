@@ -93,10 +93,10 @@ authors = ["John <johnny@example.org>", "Mark <mark@example.org>"]
 description = "Server farm 1"
 
 [defines]
-users = "$.conf.users.*"
-hosts = "$.conf.hosts.*"
-procs = "$.(proc, probe).**[@.proc != null]"
-user_defined_expr_1 = "$.**[custom_property == 'custom_value']"
+$users = "$.conf.users.*"
+$hosts = "$.conf.hosts.*"
+$procs = "$.(proc, probe).**[@.proc != null]"
+$user_defined_expr_1 = "$.**[custom_property == 'custom_value']"
 ```
 
 ### Settings file
