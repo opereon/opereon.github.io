@@ -107,37 +107,45 @@ into the object tree. The settings are overwritten by a setting file in hierarch
 By default, if no `.operc` file is present anywhere in the model, the default settings are used, as presented below. 
 
 ```toml[.operc]
+
+# flag indicating, if rules should be included from defaults
 inherit_excludes = true
 inherit_includes = true
 inherit_overrides = true
 
+# rule excluding all files starting with '.' from loading to object tree, they will be skipped by next rules
 [[exclude]]
 path = "**/.*/**"
 
+# rule including all directiories appending them to parent object under file name key as empty objects
 [[include]]
 path = "**/*"
 file_type = "dir"
 item = "${map()}"
 mapping = "${$.find(array($item.@file_path_components[..-2]).join('.')).set($item.@file_name, $item)}"
 
+# rule including _.yaml, _.yml, _.toml, _.json, loading them as object tree and merging with object created by directory rule
 [[include]]
 path = "**/_.{yaml,yml,toml,json}"
 file_type = "file"
 item = "${loadFile(@.@file_path, @.@file_ext)}"
 mapping = "${$.find(array($item.@file_path_components[..-2]).join('.')).extend($item)}"
 
+# rule including _.yaml, _.yml, _.toml, _.json, loading them as object tree and appending it to object created by directory rule as property under file name key.
 [[include]]
 path = "**/*.{yaml,yml,toml,json}"
 file_type = "file"
 item = "${loadFile(@.@file_path, @.@file_ext)}"
 mapping = "${$.find(array($item.@file_path_components[..-2]).join('.')).set($item.@file_stem, $item)}"
 
+# rule including other files, loading them as text  appending it to object created by directory rule as property under file name key.
 [[include]]
 path = "**/*"
 file_type = "file"
 item = "${loadFile(@.@file_path, 'text')}"
 mapping = "${$.find(array($item.@file_path_components[..-2]).join('.')).set($item.@file_stem, $item)}"
 
+# section for overriding parent rules, the rules are matched by type and path
 [overrides]
 # no overrides
 
